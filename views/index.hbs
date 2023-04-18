@@ -1,0 +1,49 @@
+<br>
+<table class="striped" onClick="(()=>{console.log(
+ 'event=', event,
+ '\n \n event.target=', event.target,
+ '\n \n event.currentTarget=', event.currentTarget,
+ '\n \n event.target.nodeName=', event.target.nodeName,
+ '\n \n event.target.parentNode.rowIndex=', event.target.parentNode.rowIndex
+)})()">
+	<thead>
+		<tr>
+			<th colspan="3">My to-do list</th>
+		</tr>
+	</thead>
+	{{#if user}}
+	{{#if user.todo.length}}
+	<tbody>
+		{{#each user.todo}}
+		<tr>
+			<td>
+				<label>
+					<input type="checkbox" {{#if this.checked}}checked{{/if}}>
+					<span>&nbsp;</span>
+				</label>
+			</td>
+			<td style="width: 80%;{{#if this.checked}}text-decoration:line-through{{/if}}">{{this.title}}</td>
+			<td><button class="btn btn-small">SAVE</button></td>
+		</tr>
+		{{/each}}
+	</tbody>
+
+	{{else}}
+	<tbody>
+		<tr>
+			<td colspan="3">У Вас еще пока нету записей.</td>
+		</tr>
+	</tbody>
+	{{/if}}
+	{{else}}
+	<tbody>
+		<tr>
+			<td colspan="3">Эррор.</td>
+		</tr>
+	</tbody>
+	{{/if}}
+</table>
+<br>
+
+
+<!-- <a class="btn-floating btn-large green darken-3 pulse"><i class="material-icons">edit</i></a> -->

@@ -1,0 +1,16 @@
+{{> head}}
+
+<body>
+	{{> navbar}}
+	<div class="container">
+		{{{body}}}
+	</div>
+	<div id="insert-window">
+		<textarea name="tascks" maxlength="200" wrap="hard"
+			oninput="document.querySelector('#coun_letters').innerText=200-this.value.length;  this.style.height = 'auto'; this.style.height = (this.scrollHeight) + 'px';"
+			placeholder="Чтобы создать сразу несколько записей записывайте их с новой строки." required minlength="1"></textarea>
+		<div class="container"><span id=coun_letters>200</span><div><button class="btn btn-small">SAVE</button>&nbsp;<button class="btn btn-small" onclick="document.querySelector('#insert-window').style.display = 'none';">CANCEL</button></div></div>
+	</div>
+</body>
+
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do</title>
+    <style>
+        .table {
+            width: 100%;
+            border: none;
+            margin-bottom: 20px;
+        }
+
+        .table thead th {
+            padding: 10px;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 20px;
+            text-align: center;
+            color: #444441;
+            border-top: 2px solid #716561;
+            border-bottom: 2px solid #716561;
+        }
+
+        .table tbody td {
+            padding: 10px;
+            font-size: 14px;
+            /* line-height: 20px; */
+            color: #444441;
+            border-bottom: 1px solid #716561;
+            vertical-align: middle;
+        }
+
+        .table tr:nth-child(2n) {
+            background: #E5E5E5;
+        }
+
+        label input[type=checkbox] {
+            position: absolute;
+            z-index: -1;
+            opacity: 0;
+            display: block;
+            width: 0;
+            height: 0;
+        }
+
+        .checkbox-other {
+            display: inline-block;
+            margin: 0 0 10px 0;
+            line-height: 22px;
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+        }
+
+        .checkbox-other input[type=checkbox] {
+            position: absolute;
+            z-index: -1;
+            opacity: 0;
+            display: block;
+            width: 0;
+            height: 0;
+        }
+
+        .checkbox-other span {
+            display: inline-block;
+            position: relative;
+            padding: 0 0 0 35px;
+            line-height: 22px;
+        }
+
+        .checkbox-other span:before {
+            content: "";
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border: 1px solid #2B7335;
+            box-shadow: inset 0 0 3px #8a8a8a;
+        }
+
+        /* Checked */
+        .checkbox-other input[type=checkbox]+span:after {
+            content: "";
+            opacity: 0;
+            transition: opacity 1.1s ease;
+        }
+
+        .checkbox-other input[type=checkbox]:checked+span:after {
+            content: "✓";
+            color: green;
+            font-size: 30px;
+            font-weight: 900;
+            position: absolute;
+            left: 2px;
+            top: -2px;
+            opacity: 1;
+        }
+
+        /* Focus */
+        .focused span:before {
+            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, .25);
+        }
+
+        /* Hover */
+        .checkbox-other span:hover:after {
+            filter: brightness(110%);
+        }
+
+        /* Active */
+        .checkbox-other span:active:before,
+        .checkbox-other span:active:after {
+            filter: brightness(80%);
+        }
+
+        /* Disabled */
+        .checkbox-other input[type=checkbox]:disabled+span {
+            color: #666;
+            cursor: default;
+        }
+
+        .checkbox-other input[type=checkbox]:disabled+span:before,
+        .checkbox-other input[type=checkbox]:disabled+span:after {
+            filter: grayscale(100%);
+            opacity: 0.6;
+        }
+        td.btn,td.chx {
+            width: 30px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <table class="table">
+        <thead>
+            <tr>
+                <th colspan="3">My to-do list</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="chx">
+                    <label class="checkbox-other">
+                        <input type="checkbox" checked>
+                        <span>&nbsp;</span>
+                    </label>
+                </td>
+                <td>Несколько примеров изменения вида радио кнопок на чистом CSS.</td>
+                <td class="btn"><button>X</button></td> 
+            </tr>
+            <tr>
+                <td class="chx">
+                    <label class="checkbox-other">
+                        <input type="checkbox" checked>
+                        <span>&nbsp;</span>
+                    </label>
+                </td>
+                <td>Используя такой прием, можно эффектно оформить таблицу при помощи контрастных цветов, которые гармонично впишутся в цветовую гамму вашего сайта.</td>
+                <td class="btn"><button>X</button></td> 
+            </tr>
+            <tr>
+                <td class="chx">
+                    <label class="checkbox-other">
+                        <input type="checkbox" checked>
+                        <span>&nbsp;</span>
+                    </label>
+                </td>
+                <td>Благодаря добавлению в спецификацию CSS3 свойства border-radius, появилась возможность закругления углов таблицы без использования фоновых изображений.</td>
+                <td class="btn"><button>X</button></td> 
+            </tr>
+        </tbody>
+    </table>
+    <script>
+
+    </script>
+</body>
+
+</html>
